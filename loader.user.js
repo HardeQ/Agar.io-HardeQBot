@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name        AposLoader
-// @namespace   AposLoader
+// @name        HardeQLoader
+// @namespace   HardeQLoader
 // @description Grabs latest versions of the bot scripts automatically.
 // @include     http://agar.io/
 // @version     1.3
 // @grant       none
-// @author      http://www.twitch.tv/apostolique
+// @author      http://www.twitch.tv/HardAppleQ
 // ==/UserScript==
-var aposLoaderVersion = 1.3;
+var HardeQLoaderVersion = 1.3;
 var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
 
 function getLatestCommit() {
@@ -51,9 +51,9 @@ function getLatestCommit() {
 			var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
 			latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
 			latestVersion = parseFloat(latestVersion + 0.0000);
-			var myVersion = parseFloat(aposLoaderVersion + 0.0000);
+			var myVersion = parseFloat(HardeQLoaderVersion + 0.0000);
 			if (latestVersion > myVersion) {
-				update("aposLoader", "loader.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/master/loader.user.js/");
+				update("HardeQLoader", "loader.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/master/loader.user.js/");
 			}
 			console.log('Current loader.user.js Version: ' + myVersion + " on Github: " + latestVersion);
 		});
