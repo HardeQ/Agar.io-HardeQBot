@@ -1,6 +1,6 @@
 /*The MIT License (MIT)
 
-Copyright (c) 2015 Apostolique
+Copyright (c) 2015 HardeQ
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,15 +21,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 // ==UserScript==
-// @name        AposBot
-// @namespace   AposBot
+// @name        HardeQBot
+// @namespace   HardeQBot
 // @include     http://agar.io/*
 // @version     3.645
 // @grant       none
-// @author      http://www.twitch.tv/apostolique
+// @author      http://www.twitch.tv/HardAppleQ
 // ==/UserScript==
 
-var aposBotVersion = 3.645;
+var HardeQBotVersion = 1.645;
 
 //TODO: Team mode
 //      Detect when people are merging
@@ -76,11 +76,11 @@ function getLatestCommit() {
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version")+11,latestVersion.indexOf("// @grant"));
 
                 latestVersion = parseFloat(latestVersion + 0.0000);
-                var myVersion = parseFloat(aposBotVersion + 0.0000); 
+                var myVersion = parseFloat(HardeQBotVersion + 0.0000); 
                 
                 if(latestVersion > myVersion)
                 {
-                    update("aposBot", "bot.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/" + sha + "/bot.user.js/");
+                    update("HardeQBot", "bot.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/" + sha + "/bot.user.js/");
                 }
                 console.log('Current bot.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -89,13 +89,13 @@ function getLatestCommit() {
 }
 getLatestCommit();
 
-console.log("Running Apos Bot!");
+console.log("Running HardeQ Bot!");
 
 var f = window;
 var g = window.jQuery;
 
 
-console.log("Apos Bot!");
+console.log("HardeQ Bot!");
 
 window.botList = window.botList || [];
 
@@ -112,8 +112,8 @@ window.botList = window.botList || [];
 
 window.botList.push(new QuickBot());*/
 
-function AposBot() {
-    this.name = "AposBot " + aposBotVersion;
+function HardeQBot() {
+    this.name = "HardeQBot " + HardeQBotVersion;
 
     this.toggleFollow = false;
     this.keyAction = function(key) {
